@@ -13,6 +13,10 @@
 *.snm
 *.vrb
 *.xdv
+*.pdf
+*.tex
+*.png
+*.jpg
 
 # OS junk
 __MACOSX/
@@ -39,9 +43,7 @@ venv/
 *.swp
 *.swo
 
-# Git
-*.orig
-
 # Temp
 *.old
 test.pdf
+*.zip
