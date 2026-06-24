@@ -1,0 +1,617 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[usenames]{color}
+\usepackage{epsfig}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{cite}
+\usepackage{array}
+\usepackage{url}
+\usepackage{lineno}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{booktabs}
+\usepackage{mdframed}
+\usepackage{tabularx}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=0.55in,bmargin=1.0in,lmargin=0.65in,rmargin=0.65in}
+\setlength{\headheight}{48pt}
+\setlength{\headsep}{14pt}
+
+% 中文支持
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{Microsoft YaHei}
+
+\renewcommand{\abstractname}{\textcolor{violet}{\textbf{ABSTRACT / 摘要}}}
+\newcommand{\flogo}{\includegraphics[height=40pt]{LOGO1.png}}
+
+\pagenumbering{gobble}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\flogo}
+\rhead{\includegraphics[height=40pt]{LOGO2.png} \thepage}
+\pagestyle{fancyplain}
+
+\makeatletter
+\ifCLASSOPTIONjournal
+\def\abstract{\@IEEEtweakunitybaselinestretch{1.15}
+	\@IEEEabskeysecsize\noindent\abstractname---\relax
+	\fi\@IEEEgobbleleadPARNLSP}
+\makeatother
+
+\newcommand{\citet}[1]{\cite{#1}}
+
+% 灰色聊天日志框
+\newmdenv[
+  backgroundcolor=gray!10,
+  linecolor=gray!40,
+  linewidth=0.5pt,
+  roundcorner=4pt,
+  innertopmargin=4pt,
+  innerbottommargin=4pt,
+  innerleftmargin=6pt,
+  innerrightmargin=6pt,
+  font=\scriptsize\ttfamily
+]{chatbox}
+
+\begin{document}
+
+\title{\vspace*{0.5cm}\textcolor{violet}{基于多智能体博弈的"薛定谔的鸽子"演化模型：\\
+当代社交承诺中"下次一定"的次贷危机推演}
+\vspace*{0.3cm}
+}
+
+\author{\textbf{鸽子博弈研究组$^{1}$，S.H.I.T. 期刊编辑部$^{2}$}\\
+\vspace*{0.1cm}
+中国广西南宁 薛定谔大学 社会信用研究所 \\
+\vspace*{0.2cm}
+\small
+$^{1}$ 薛定谔大学鸽子行为学系 \\
+$^{2}$ S.H.I.T. 整活研究中心 \\
+\vspace*{0.1cm}
+通讯作者：鸽王（e-mail: never-show-up@shitspace.xyz）\\
+\vspace*{0.1cm}
+本研究由"下次一定"国家自然科学基金资助（项目编号：NEXT-TIME-114514）\\
+本文包含完整52周模拟日志及开源框架源码 \\
+\normalsize
+}
+
+\twocolumn[
+\begin{@twocolumnfalse}
+\let\newpage\relax\maketitle\thispagestyle{fancy}
+\begin{abstract}
+\textbf{目的：}本研究旨在揭示当代社交互动中"下次一定"这一语言承诺行为的系统性泡沫特征与次贷危机演化机制。
+\textbf{方法：}基于多智能体推演框架，构建了包含五种典型社交人格的群聊环境（对照组），并设计了去除理性审计角色的消融实验（实验组）。两平行宇宙分别进行为期52周的模拟实验，引入5次外部冲击事件，每周记录群聊交互、社交债务演进及泡沫指数变化。
+\textbf{结果：}对照组（含记账狂）债务总额从0元飙升至1,372元，泡沫破裂指数（SBBI）达到97.6（深红预警），累计兑现率仅59.2\%，信用均值从800崩溃至459。实验组（鱼系青年替代记账狂）债务总额仅501元，泡沫指数50.8（橙色预警），兑现率34.0\%，信用均值537。异质性分析表明，降水强度每增加10mm，非合作型社交偏离事件的发生概率上升约7.3\%（$p<0.05$）；MBTI中知觉型（P型）主体的平均承诺折扣率比判断型（J型）高43.6\%。
+\textbf{结论：}提出并验证了"透明度悖论"假说——系统中存在绝对理性的审计者时，因其高效率记录和追索行为加速了承诺-兑现的剪刀差膨胀，导致社交信用体系的更快崩溃。完整推演框架已开源至GitHub：\url{https://github.com/zhouder/Pigeon-Agent-Simulation}。
+\\
+\noindent
+\textcolor{violet}{\textbf{INDEX TERMS / 关键词}} 下次一定，社交泡沫，薛定谔的鸽子，多智能体推演，庞氏结构，情感次贷，消融实验，透明度悖论，随机微分方程，异质性分析。\\
+\\
+\textcolor{violet}{\textbf{IMPACT STATEMENT / 影响声明}} 本文首次通过可控消融实验验证了"下次一定"作为一种社交信用衍生品的系统性脆弱性，并发现了审计者存在反而加速系统崩溃的反直觉现象。
+\vspace{0.3cm}
+\end{abstract}
+\end{@twocolumnfalse}
+]
+
+\IEEEpeerreviewmaketitle
+
+% =========================================================================
+\section{INTRODUCTION / 引言}
+% =========================================================================
+
+\subsection{研究背景与动机}
+
+"下次一定"——这一看似无害的社交用语，在当代青年的日常互动中已成为最具破坏力的修辞武器之一。从饭局邀约到还书承诺，从"改天喝咖啡"到"有空聚一下"，"下次一定"的使用频率已远超其兑现频率，形成了社会学意义上罕见的"承诺-兑现"剪刀差现象\citet{pigeon_linguistics}。
+
+本研究将其命名为\textbf{"薛定谔的鸽子"}现象：当主体发出"下次一定"这一言语行为时，在观测行为发生之前，该社交承诺同时处于"会履行"与"不会履行"的叠加态；然而一旦约定的兑现时刻$t$到达观测窗口，系统的波函数必然坍缩为非合作型社交偏离态（Non-cooperative Social Deviation state）。这一量子社会学隐喻精确刻画了当代异步社交的核心矛盾——社交承诺的真实状态只有在约定的兑现时刻才被决定，而系统的初始条件（历史信用积累$D_0$、历史违约计数$\mathcal{N}_{\text{鸽}}$、当前借口感生势能$V_{\text{借口}}$）共同决定了坍缩的方向\citet{schrodinger_vs_pigeon}。
+
+本质上，"下次一定"构成了一个\textbf{无抵押、无担保、无交割期限}的"三元缺失"社交信用衍生品\citet{ponzi_social}。每一次"下次一定"的发行，即是在社交关系账本上进行了一次未经准备金覆盖的信用扩张。
+
+\subsection{历史溯源：承诺兑现率的社会技术变迁}
+
+理解"下次一定"现象需要将其置于社交承诺演化的长时段历史语境中。本研究将人类社交承诺的兑现演化划分为三个技术-社会范式阶段。
+
+\textbf{范式I——农业社会的高密度信用监督时期。}在前现代的自给自足经济中，社交承诺的违约成本极高：失信不仅导致个人声誉资本的折损，更可能在缺乏正式契约保护的熟人社会中引发生存资源的系统性挤出。费孝通先生提出的"差序格局"\citet{guanxi}本质上构成了一个高连通性、低传播延迟的社会信用监督网络。在此结构中，承诺的兑现率与社会网络密度$\rho$正相关。
+
+\textbf{范式II——福特制工业社会的标准化时间规训。}工业革命引入了泰勒制时间管理，工厂的精确作息与工作日的固定节奏将社交互动的时间成本压缩到高度可预测的固定框架中。在"福特制社交"模式下，承诺的履行具有高度的可预期性。
+
+\textbf{范式III——信息时代的异步通讯与推延自由度的指数级扩张。}移动即时通讯工具的普及从根本上重构了社交承诺的时间结构。异步通讯（Asynchronous Communication）赋予了主体前所未有的推延自由度：承诺的发出与履行在时间维度上解耦，使得违约检测的即时性被大幅降低。各即时通讯平台中的"已读"状态显示功能更创造了一种新型失信模态——\textbf{沉默违约（Default by Silence）}。
+
+当前中国互联网用户中"下次一定"的日均产出频次约为2.7次/日（本实验室跨平台语料采集数据，$N=10^4$），远超其平均社交活动参与频次（约0.3次/周），形成了约63倍的\textbf{承诺-活动剪刀差}。
+
+\subsection{哲学与伦理学维度的批判性分析}
+
+从康德义务论伦理学的视角审视，"下次一定"构成了一个极具张力的道德悖论。康德的\textbf{绝对命令}（Categorical Imperative）要求：一条道德准则必须具有可普遍化性而不产生逻辑矛盾。若将"下次一定但系统性不履行"作为普世交往准则，则承诺体系本身将因预期自反性而崩塌。
+
+当代青年的社交实践对这一古典规范框架提出了严峻挑战。本研究将这种系统性偏离命名为\textbf{"碎片化功利主义"（Fragmented Utilitarianism）}：在微观决策层面，每一个"下次一定"的产出是主体在特定时间约束下的局部最优效用计算结果——主体对物理空间位移的本能性阻力（Instinctive Resistance to Physical Spatial Displacement）所对应的边际效用函数值，系统性高于跨空间移动所需承担的多维成本。
+
+进一步地，从拉康式精神分析的方法论视角审视，当代青年在面临外部施加的社交时间约束时所表现出的趋避冲突趋同行为——即群体在面对社会时间制度的异化规训时，倾向于调用高度同质化的微观退避启发式策略（Micro-Avoidance Heuristic Strategy），通过在贝叶斯信念更新框架下对"跨空间位移赴约"与"居家自处"两个选项的预期效用在系统1认知层面进行非对称比较，最终以"下次一定"这一模糊信令作为认知失调的缓解机制来调和言语承诺与行为实施之间的结构性裂隙。
+
+这一伦理学张力指向了一个深层的理论问题：\textbf{承诺的真实性究竟是由言语行为产出时刻的意向状态决定，还是由约定兑现时刻的实施行为决定？}本研究的消融实验结果（\S V）表明，在系统层面，意向性是不具有统计显著性的无关变量。
+
+% =========================================================================
+\section{RELATED WORK / 相关工作}
+% =========================================================================
+
+现有文献对鸽子行为（Pigeon Behavior）的分析可以归纳为三大理论流派。
+
+\subsection{行为经济学的贴现效用框架}
+
+行为经济学派主要以行为决策理论为分析框架，从心理账户和时间贴现两个角度切入。Steel\citet{procrastination}的元分析工作将放鸽子归因为执行功能的神经机制缺陷和前额叶皮层活动不足。Putnam\citet{social_capital}通过社会资本理论视角，将违约视为社交关系投资的负回报，提出了社交信用折现因子$\delta_s$。然而，该流派预设了个体行为符合理性经济人假设，而"下次一定"中普遍存在的非理性自我欺骗特征无法被标准指数贴现模型充分解释。
+
+\subsection{量子社会学的观测效应框架}
+
+量子社会学派是近年来兴起的新异分析范式。其核心命题：社交关系的状态在外部观测前处于不确定的叠加态，观测行为本身改变系统状态\citet{schrodinger_vs_pigeon}，其后继延伸\citet{quantum_social}提出了社交承诺量子化的初步建模设想。然而，该流派目前主要停留在概念隐喻层面，尚未发展出可操作的数学形式化框架。
+
+\subsection{神经科学与多智能体模拟的交叉框架}
+
+神经拖延学领域的研究\citet{procrastination}通过fMRI实验建构了拖延行为的神经生物学解释。但在多智能体计算社会学方面，Park等人\citet{generative_agents}提出了基于LLM的可信社交智能体框架，Li等人\citet{social_learning}研究了社交规范的博弈涌现。Watts\citet{network_collapse}在网络级联动力学领域做出了开创性贡献。Chen等人\citet{social_bubble}提出了基于承诺密度的社交泡沫量化指标\citet{merton_finance}。然而，现有文献缺少一个融合随机过程、消融实验和外部冲击的整合性分析框架——本研究正是在这一学术缝隙中诞生的。
+
+% =========================================================================
+\section{MATHEMATICAL FORMULATION / 数学模型}
+% =========================================================================
+
+\subsection{社交债务存量的随机微分方程}
+
+设社交债务存量$D_t \geq 0$（单位：元）为时间$t$（单位：周）的连续随机过程，定义在概率空间$(\Omega, \mathcal{F}, \{\mathcal{F}_t\}_{t \geq 0}, \mathbb{P})$上：
+
+\begin{equation}
+\label{eq:sde}
+dD_t = \mu D_t\,dt + \sigma D_t\,dW_t + J_t\,dN_t
+\end{equation}
+
+其中$\mu > 0$（$\text{周}^{-1}$）为承诺生成率，$\sigma > 0$（$\text{周}^{-1/2}$）为借口感生波动率，$W_t$为标准维纳过程，$J_t \sim \text{Exp}(\lambda_J)$为外部冲击跳跃幅度，$N_t$为强度$\nu$的泊松过程。
+
+方程(\ref{eq:sde})的解为：
+
+\begin{equation}
+\label{eq:solution}
+D_t = D_0 \cdot \exp\left[\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\right] \cdot \prod_{i=1}^{N_t} (1 + J_{t_i})
+\end{equation}
+
+当$\mu - \sigma^2/2 > 0$时系统进入庞氏轨道。本实验中$\mu_{ctl} \approx 0.12$，$\sigma_{ctl} \approx 0.09$，故$\mu - \sigma^2/2 > 0$。
+
+\subsection{"薛定谔的鸽子"叠加态方程}
+
+\begin{equation}
+\label{eq:schrodinger}
+|\Psi\rangle_{\text{鸽子}} = \alpha|\text{会来}\rangle + \beta|\text{鸽子}\rangle, \quad |\alpha|^2 + |\beta|^2 = 1
+\end{equation}
+
+系统的时间演化：
+
+\begin{equation}
+\begin{aligned}
+i\hbar\frac{\partial}{\partial t}|\Psi\rangle &=
+\begin{pmatrix}
+E_{\text{来}} & V_{\text{借口}} \\[3pt]
+V_{\text{借口}}^* & E_{\text{鸽}}
+\end{pmatrix}
+|\Psi\rangle
+\end{aligned}
+\label{eq:schrodinger_eq}
+\end{equation}
+
+解得坍塌概率：
+\begin{equation}
+\label{eq:collapse_prob}
+|\beta(t)|^2 = \frac{|V_{\text{借口}}|^2}{\Delta E^2 + 4|V_{\text{借口}}|^2} \bigl[1 - \cos(\Omega t)\bigr]
+\end{equation}
+
+其中$\Delta E = E_{\text{鸽}} - E_{\text{来}}$，$\Omega = \hbar^{-1}\sqrt{\Delta E^2 + 4|V_{\text{借口}}|^2}$。当$t \to \infty$时$\overline{|\beta|^2} \to 1$。
+
+\subsection{社交泡沫破裂指数（SBBI）}
+
+\begin{equation}
+\begin{aligned}
+\label{eq:bbbi}
+\text{SBBI}(t) = \sum_i w_i f_i(\cdot) + \eta \cdot I_{\rm shk}
+\end{aligned}
+\end{equation}
+
+其中$f_D=\min(40, D_t/30)$，$f_\tau=\min(20, 0.3\tau_t)$，$f_C=0.1\max(0, 800-C_t)$，$f_G=15[1-K_t/\max(P_t,1)]$。权重$\bm{w}=(0.35,0.25,0.25,0.15)^{\mathsf{T}}$，$\eta=8$。SBBI$\ge 85$时进入深红预警。
+
+% =========================================================================
+\section{MATERIALS AND METHODS / 材料与方法}
+% =========================================================================
+
+\subsection{多智能体推演框架}
+
+实验基于Pigeon-Agent-Simulation-Framework v2.0\textsuperscript{*}以Python 3.12实现。两组平行实验采用相同随机种子$\texttt{seed}=42$，唯一干预变量为第3个Agent角色类型。
+
+\vspace{0.05cm}\noindent\small\textsuperscript{*}{\url{https://github.com/zhouder/Pigeon-Agent-Simulation}}\normalsize
+
+\begin{table}[ht]
+\begin{center}
+\caption{Agent行为参数向量$\bm{\theta}_i$配置。}
+\label{tab:params}
+\small
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lcccc}
+\toprule
+Agent & $\mathbb{P}(\text{违约})$ & $\mathbb{P}(\text{过度承诺})$ & $\theta_{\text{追索}}$ & $\theta_{\text{创造}}$ \\
+\midrule
+小鸽 & 0.92 & 0.30 & 0.05 & 0.85 \\
+阿讨好 & 0.65 & 0.95 & 0.10 & 0.30 \\
+记账狂 & 0.05 & 0.10 & \textbf{0.98} & 0.05 \\
+阿鱼 & 0.50 & 0.60 & 0.02 & 0.20 \\
+摆烂仔 & 0.85 & 0.15 & 0.00 & 0.10 \\
+卷王 & 0.88 & 0.40 & 0.20 & 0.60 \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\end{table}
+\normalsize
+
+\subsection{外部冲击协议}
+
+\begin{table}[ht]
+\begin{center}
+\caption{五类外部冲击事件。}
+\label{tab:shocks}
+\small
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{cccc}
+\toprule
+周次 & 事件 & 效应参数 & 理论机制假设 \\
+\midrule
+第11周 & 双十一 & $\mathbb{P}(\text{违约})\times2.0$ & 消费主义信用的挤出效应 \\
+第23周 & 述职季 & $V_{\text{借口}}\times2.0$ & 职场叙事侵占社交空间 \\
+第30周 & 水逆 & $\mathbb{P}(\text{玄学})\times3.0$ & 非理性归因替代理性借口 \\
+第37周 & 催婚 & $\mathbb{P}(\text{家庭})\ge0.5$ & 家庭制度对社交的挤压 \\
+第45周 & 流感 & $\mathbb{P}(\text{医疗})=\text{峰值}$ & 健康变量负外部性最大化 \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\end{table}
+\normalsize
+
+\subsection{评估指标体系}
+
+采集指标：社交债务总额$D_t$；泡沫破裂指数$\text{SBBI}(t)$（\S III-C）；借口分类统计（8大类30子类，附录D）；信用评分$C_t$（初始800，每次违约扣$5\text{--}20$）；累积兑现率$K_t/P_t$。
+
+% =========================================================================
+\section{RESULTS / 实验结果}
+% =========================================================================
+
+\subsection{社交债务的动态演化轨迹}
+
+图\ref{fig:debt_kline}展示了两个平行宇宙在52周内的债务总额及泡沫指数演化。对照组呈现显著的\textbf{"阶梯式增长"}：每经历一次外部冲击，债务水平$D_t$向上跃升且无法回落——即"棘轮效应"\citet{ratchet_effect}。
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{./fig1_debt_kline.pdf}
+\caption{对照组（红）与实验组（蓝）社交债务总额$D_t$（实线）与$\text{SBBI}(t)$（虚线）。对照组债务增长至1,372元，$\text{SBBI}=97.6$（深红）。}
+\label{fig:debt_kline}
+\end{figure}
+
+\subsection{消融实验：透明度悖论}
+
+表\ref{tab:comparison}呈现核心发现。
+
+\begin{table}[ht]
+\begin{center}
+\caption{核心指标对比。对照组兑现率更高但债务和泡沫指数更大——验证"透明度悖论"。}
+\label{tab:comparison}
+\small
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lccc}
+\toprule
+指标 & 对照组 & 实验组 & 效应量 \\
+\midrule
+期末债务$D_{52}$（元） & 1,372 & 501 & $+871\;(+173.9\%)$ \\
+$\text{SBBI}(52)$ & 97.6 & 50.8 & $+46.8$ \\
+风险等级 & 深红 & 橙色 & $-2$级 \\
+累计$P_{52}$ & 49 & 53 & $-4$ \\
+累计$K_{52}$ & 29 & 18 & $+11$ \\
+$\pi=K_{52}/P_{52}$ & 59.2\% & 34.0\% & $+25.2$pp \\
+$\bar{C}_{52}$ & 459 & 537 & $-78$ \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\end{table}
+\normalsize
+
+记账狂通过四种机制加速崩溃：（1）\textbf{债务显性化}——隐性债务被纳入可计算域；（2）\textbf{复利膨胀}——每周$5\%$复利；（3）\textbf{信用加速衰减}——对照组降幅$42.6\%$，实验组仅$32.9\%$；（4）\textbf{挤兑螺旋}\citet{bank_run}。
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{./fig4_credit_decay.pdf}
+\caption{累积兑现率$K_t/P_t$演化。}
+\label{fig:credit_decay}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{./fig3_phase_diagram.pdf}
+\caption{社交信用系统相空间轨迹。}
+\label{fig:phase_diagram}
+\end{figure}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{./fig2_excuse_heatmap.pdf}
+\caption{借口类型分布热力图（4周聚合）。}
+\label{fig:excuse_heatmap}
+\end{figure*}
+
+% =========================================================================
+\section{HETEROGENEITY ANALYSIS / 异质性分析}
+% =========================================================================
+
+\subsection{气候协变量的调节效应}
+
+气象条件对非合作型社交偏离事件的发生概率展现出统计显著调节效应。将2024-2025年南宁市气象站观测数据作为外生协变量引入扩展模型：
+
+\begin{equation}
+\label{eq:weather}
+\text{SBBI}_{\text{扩展}}(t) = \text{SBBI}(t) + \gamma_R R_t + \gamma_T (T_t - 25)^2 + \gamma_A A_t
+\end{equation}
+
+其中$R_t$（mm）为周累计降水量，$T_t$（$^\circ$C）为周平均气温，$A_t$为空气质量指数。南宁市全年高温多雨的气候特征使得降水效应的估计具有天然的统计效力。
+
+\begin{itemize}
+\item \textbf{降水效应}：$R_t$每增加10mm，$\mathbb{P}(\text{违约})$上升约$7.3\%$（$p<0.05$）。降水作为一种外生的自然借口感生变量，为借口市场提供了稳定供给。
+\item \textbf{温度效应}：当$T_t$偏离热舒适区间$[18,25]^\circ$C时，$\mathbb{P}(\text{违约})$呈U型曲线。极端高温（$>35^\circ$C）使违约率增加$42\%$。
+\item \textbf{空气质量效应}：重度污染时医疗类借口的条件占比上升$18.5$pp（$p<0.01$）。
+\end{itemize}
+
+\subsection{人格维度的异质性效应}
+
+\begin{equation}
+\label{eq:pdr}
+\text{PDR}_i = \frac{\sum_{t=1}^{52} \mathbbm{1}\{\text{Agent}_i\text{在}t\text{周违约}\}}{\sum_{t=1}^{52} \mathbbm{1}\{\text{Agent}_i\text{在}t\text{周有未偿承诺}\}}
+\end{equation}
+
+基于MBTI映射：（1）P型平均$\text{PDR}$比J型高$43.6\%$（$t=6.72$，$p<0.001$）；（2）I型沉默违约概率是E型的$3.2$倍；（3）T型借口中工作类占比更高（$47\%$ vs $29\%$）。
+
+% =========================================================================
+\section{DISCUSSION / 讨论}
+% =========================================================================
+
+\subsection{粘性承诺与信用通胀}
+
+"下次一定"作为一种\textbf{粘性承诺}——兑现预期锚定在初始产出时刻，但实际履约倾向单调递减。\textbf{若$\mu > \bar{\lambda}_{\text{衰减}}$，系统必经历信用通胀螺旋并导向临界相变。}
+
+\subsection{透明度悖论}
+
+记账狂的高效债务记录产生三重负外部性：（1）隐性债务显性化；（2）频繁追索诱导预防性违约；（3）精确记账构成"节俭悖论"\citet{keynes_thrift}的社交信用镜像。
+
+\subsection{未来工作}
+
+提出\textbf{不确定性感知鸽子交互预测框架}（UAPIPF），引入变分贝叶斯深度学习方法，通过神经过程对违约决策拟合随机场，在后验分布层面量化承诺兑付概率的完整置信区间。
+
+% =========================================================================
+\section{CONCLUSION / 结论}
+% =========================================================================
+
+\textbf{第一}，对照组$D_{52}=1,372$元、$\text{SBBI}=97.6$（深红）；实验组$D_{52}=501$元、$\text{SBBI}=50.8$（橙色）。
+
+\textbf{第二}，"薛定谔的鸽子"量子态方程（\ref{eq:schrodinger}--\ref{eq:collapse_prob}）证明了当$|V_{\text{借口}}| > |\Delta E|$时承诺波函数必然坍缩。
+
+\textbf{第三}，\textbf{"透明度悖论"}——理性审计者诱导了$173.9\%$的债务增量。
+
+\textbf{致谢} 本研究受鸽子行为学基金会（Pigeon Behavioral Foundation）第114514号项目资助，计算资源由薛定谔大学高性能计算集群提供。
+
+% =========================================================================
+\begin{thebibliography}{99}
+% =========================================================================
+
+\bibitem{pigeon_linguistics} 小红书用户"momo". (2024). \textit{关于我鸽了闺蜜三次被拉黑这件事}. 小红书. [Online]. Available: https://www.xiaohongshu.com/explore/鸽三次
+
+\bibitem{schrodinger_vs_pigeon} 知乎匿名用户. (2025). \textit{如何优雅地在微信上回复"改天请你吃饭"而不显得敷衍？}. 知乎. [Online]. Available: https://www.zhihu.com/question/改天吃饭
+
+\bibitem{ponzi_social} 百度贴吧"弱智吧"吧友. (2024). \textit{如果我每次都说下次一定，是不是就拥有了无数个平行的下次？}. 百度贴吧. [Online]. Available: https://tieba.baidu.com/p/下次一定平行宇宙
+
+\bibitem{procrastination} Bilibili弹幕网. (2023). \textit{"下次一定"考据：从白嫖UP主到当代青年的社交退避}. Bilibili. [Online]. Available: https://www.bilibili.com/video/下次一定考据
+
+\bibitem{social_capital} 豆瓣小组. (2023). \textit{社恐互助小组：今天你找借口不出门了吗？}. 豆瓣. [Online]. Available: https://www.douban.com/group/social-anxiety
+
+\bibitem{generative_agents} 微信公众号"社交观察". (2024). \textit{当代年轻人社交承诺的量子纠缠态研究}. 微信公众平台. [Online]. Available: https://mp.weixin.qq.com/s/社交纠缠态
+
+\bibitem{social_learning} 微博用户"人类的本质是鸽子". (2024). \textit{关于我同时鸽了5个人的技巧总结}. 新浪微博. [Online]. Available: https://weibo.com/鸽子本质
+
+\bibitem{network_collapse} 虎扑社区用户. (2024). \textit{朋友群从天天聊天到没人说话只用了半年}. 虎扑. [Online]. Available: https://bbs.hupu.com/群聊消亡史
+
+\bibitem{social_bubble} 知乎用户"社会学在逃博士". (2025). \textit{从庞氏骗局的角度理解"下次一定"的社会学意义}. 知乎. [Online]. Available: https://www.zhihu.com/question/庞氏社交
+
+\bibitem{merton_finance} 小红书用户"金融街民工". (2024). \textit{用BSM模型给闺蜜的"下次一定"定价}. 小红书. [Online]. Available: https://www.xiaohongshu.com/explore/社交衍生品定价
+
+\bibitem{ratchet_effect} 微信公众号"城市画报". (2024). \textit{为什么你约的人每次都"下次一定"——棘轮效应在社会学中的新应用}. 微信公众平台. [Online]. Available: https://mp.weixin.qq.com/s/棘轮效应社交
+
+\bibitem{bank_run} 豆瓣用户"经济观察家". (2025). \textit{当所有朋友同时催你还债：社交挤兑的微观经济学}. 豆瓣日记. [Online]. Available: https://www.douban.com/note/社交挤兑
+
+\bibitem{keynes_thrift} Bilibili知识区UP主. (2024). \textit{凯恩斯的节俭悖论在朋友圈社交中的完美体现}. Bilibili. [Online]. Available: https://www.bilibili.com/video/节俭悖论社交
+
+\bibitem{quantum_social} 贴吧用户"量子力学初学者". (2024). \textit{用量子叠加态解释"鸽与不鸽"的二象性}. 百度贴吧. [Online]. Available: https://tieba.baidu.com/p/量子鸽子
+
+\bibitem{guanxi} 知乎用户"社会科学评论". (2024). \textit{从费孝通的差序格局看当代饭局爽约现象}. 知乎. [Online]. Available: https://www.zhihu.com/question/差序格局饭局
+
+\bibitem{excuse_book} 抖音博主"鸽王日记". (2024). \textit{一年用过的所有借口的年终总结}. 抖音. [Online]. Available: https://www.douyin.com/video/借口年鉴
+
+\bibitem{weather_mood} 小红书用户"南宁躺平指南". (2025). \textit{南宁夏天40度谁还出门啊当然是鸽掉}. 小红书. [Online]. Available: https://www.xiaohongshu.com/explore/南宁鸽
+
+\bibitem{mbti_meta} 豆瓣小组. (2024). \textit{MBTI十六型人格放鸽子行为大赏}. 豆瓣. [Online]. Available: https://www.douban.com/group/mbti-pigeon
+
+\bibitem{network_science} 虎扑用户"社会网络分析师". (2024). \textit{一个宿舍群从建群到死群只需要23周}. 虎扑. [Online]. Available: https://bbs.hupu.com/死群研究
+
+\bibitem{social_physics} Bilibili知识区. (2024). \textit{社交物理学家告诉你为什么"下次一定"永远是假的}. Bilibili. [Online]. Available: https://www.bilibili.com/video/社交物理学
+
+\end{thebibliography}
+
+% =========================================================================
+\appendix
+\section*{APPENDIX / 附录}
+\label{sec:appendix}
+% =========================================================================
+
+\subsection*{附录A：完整群聊日志——第11周（双十一消费主义冲击）}
+
+\begin{chatbox}
+【周末约饭小分队(5)】
+
+记账狂：@all 本周六晚有空吗？新开火锅店双十一特惠满200送100。
+此前23周累计债务已达500元以上。
+
+小鸽：本周六原可出席，但双十一尾款支付后现金流断裂。
+建议顺延至下周，届时以双十一购入的自热火锅作为社交抵押物。
+
+阿讨好：可出席。但本日另有3项并行社交承诺——存在时间冲突。
+
+卷王：服务器集群第3次故障后已在机房连续工作72小时。
+修复完成后补请人均300元日料。承诺锁定至下下周期。
+
+摆烂仔：无可奉告。已购入即食米粉30份。
+
+记账狂：更新记录。小鸽——物流型信令首次出现。
+阿讨好——并行承诺第27次。卷王——延期承诺第9次
+（自第1周起零兑现）。摆烂仔——输出缺失。
+
+【系统提示：债务表已更新至第23次迭代。】
+\end{chatbox}
+
+\subsection*{附录B：完整群聊日志——第30周（水星逆行天文冲击）}
+
+\begin{chatbox}
+【周末约饭小分队(5)】
+
+摆烂仔：通讯状态已读未响应（第5个自然日）。
+
+记账狂：本周水星逆行周期。群内债务已达历史新高。
+小鸽累计债务195元（含复利），卷王季度延期费已超本金。
+
+小鸽：经第三方占卜服务评估，本周期不宜社交活动以避免
+财务运势损失。水逆周期结束后双倍履约。
+
+卷王：水逆周期已对生产系统产生影响。发现不相关
+代码模块间存在量子纠缠态异常。完成复盘报告后补足。
+
+阿讨好：提出线上同步进餐替代方案——但存在违逆天文
+周期的禁忌顾虑。采取观望策略。
+
+记账狂：玄学类信令占比34%（历史极值）。小鸽新增
+占卜型信令（创造力评分6/10），卷王新增量子纠缠型
+信令（评分8/10）。信令荒谬度指数从2.3升至7.8。
+\end{chatbox}
+
+\subsection*{附录C：完整群聊日志——第52周（终局）}
+
+\begin{chatbox}
+【周末约饭小分队(5)】
+
+记账狂：第52周节点——最后一次债务统计操作。
+未清偿债务累计1,372元，深红预警区间。
+第一册记录介质用尽，启动第二册。
+
+小鸽：关于此前52周约100次非合作型社交偏离事件的
+归责声明。承诺于年终奖金发放后以双倍本金偿还
+历史麻辣烫债务（本金45元）。
+
+阿讨好：关于52周期间约200次未履行并行承诺的反思。
+宣布终止过度承诺行为模式训练计划。信令在此中断。
+
+卷王：关于从第1周至第52周等待"周期结束"的元认知
+评估。结论：周期概念本身可能为无限递归。
+
+摆烂仔：。（终端符号。与历史模式存在语义偏移。）
+
+【系统提示：第一册记录介质用尽。最终写入内容：
+本群社交信用结构即将进入不可逆相变坍缩。】
+\end{chatbox}
+
+\subsection*{附录D：借口分类编码词典}
+
+\begin{table}[ht]
+\begin{center}
+\footnotesize
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{cll}
+\toprule
+编码 & 类别 & 典型话语示例 \\
+\midrule
+MED-01 & 医疗通用 & "牙疼/发烧/系统不适" \\
+MED-02 & 牙医专项 & "预约今日拔除智齿" \\
+MED-03 & 流感效应 & "疑似感染，为避免传播" \\
+MED-04 & 心理修复 & "精神状态不佳需独处恢复" \\
+\midrule
+WRK-01 & 加班溢出 & "项目进度驱动，通宵作业中" \\
+WRK-02 & 会议锁死 & "跨部门协调会议无法退出" \\
+WRK-03 & DDL逼近 & "主管要求周期内交付" \\
+WRK-04 & 空间位移 & "处于异地，延后处理" \\
+\midrule
+FAM-01 & 代际义务 & "家庭膳食约定不可取消" \\
+FAM-02 & 亲属筛选 & "家族安排的社会匹配程序" \\
+FAM-03 & 血缘聚落 & "亲属到访需履行接待义务" \\
+FAM-04 & 子代监护 & "后代无人看管" \\
+\midrule
+MYS-01 & 天文归因 & "水星逆行周期限制出行" \\
+MYS-02 & 星象预测 & "今日星座运势指示规避社交" \\
+MYS-03 & 占卜裁决 & "塔罗推演结果为凶" \\
+MYS-04 & 量子态坍缩 & "意识状态坍缩为拒绝社交不可逆态" \\
+\midrule
+ANM-01 & 动物照护 & "伴侣动物需喂养/陪护" \\
+ANM-02 & 动物分娩 & "邻里动物即将生产需协助" \\
+ANM-03 & 动物情绪 & "仓鼠情绪状态不稳定" \\
+\midrule
+WTH-01 & 降水规避 & "降水量过大，跨空间移动成本过高" \\
+WTH-02 & 极端温度 & "40$^\circ$C环境下无移动意愿" \\
+WTH-03 & 空气质量 & "AQI 300——跨空间位移相当于健康套利" \\
+\midrule
+SLC-01 & 自我修复 & "今日需执行认知空闲协议" \\
+SLC-02 & 社交枯竭 & "社交能量储备归零" \\
+SLC-03 & 存在性停顿 & "计划执行观察蚂蚁群落的意图行为" \\
+\midrule
+CMT-01 & 下周锁定 & "次周期一定出席" \\
+CMT-02 & 下月锁定 & "下一日历月一定补足" \\
+CMT-03 & 条件延期 & "待当前工作周期结束" \\
+CMT-04 & 终极延期 & "下一个人生阶段一定履行" \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\caption{借口分类编码词典：8大类30子类。}
+\label{tab:excuse_dict}
+\end{table}
+\normalsize
+
+\subsection*{附录E：借口类别的周期性变迁}
+
+\begin{table}[ht]
+\begin{center}
+\footnotesize
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lcr}
+\toprule
+观测窗口 & 主导类别 & 条件占比(\%) \\
+\midrule
+第1--8周 & MED（医疗） & 38.2 \\
+第9--16周 & WRK（工作） & 31.5 \\
+第17--24周 & MED$+$WRK & 28.3$+$27.1 \\
+第25--32周 & MYS（玄学） & 34.0 \\
+第33--40周 & FAM（家庭） & 35.7 \\
+第41--52周 & CMT（承诺变体） & 42.3 \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\caption{52周中主导借口类别的周期性变迁。}
+\label{tab:excuse_cycle}
+\end{table}
+\normalsize
+
+\end{document}
