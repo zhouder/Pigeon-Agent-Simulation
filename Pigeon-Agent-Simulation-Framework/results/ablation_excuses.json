@@ -1,0 +1,218 @@
+{
+  "week_3": {
+    "pleaser": {
+      "commitment": 1
+    },
+    "pigeon": {
+      "commitment": 1
+    }
+  },
+  "week_4": {
+    "pigeon": {
+      "mystical": 1
+    },
+    "pleaser": {
+      "mystical": 1
+    }
+  },
+  "week_5": {
+    "pleaser": {
+      "commitment": 1
+    }
+  },
+  "week_6": {
+    "pleaser": {
+      "medical": 1
+    },
+    "fish": {
+      "commitment": 1
+    }
+  },
+  "week_7": {
+    "pigeon": {
+      "commitment": 1
+    },
+    "workaholic": {
+      "work": 1
+    },
+    "fish": {
+      "commitment": 1
+    }
+  },
+  "week_8": {
+    "pleaser": {
+      "work": 1
+    }
+  },
+  "week_10": {
+    "pleaser": {
+      "medical": 1
+    },
+    "pigeon": {
+      "mystical": 1
+    }
+  },
+  "week_11": {
+    "pleaser": {
+      "commitment": 1
+    }
+  },
+  "week_12": {
+    "workaholic": {
+      "mystical": 1
+    },
+    "fish": {
+      "mystical": 1
+    }
+  },
+  "week_15": {
+    "pleaser": {
+      "commitment": 1
+    }
+  },
+  "week_16": {
+    "fish": {
+      "medical": 1
+    },
+    "pigeon": {
+      "medical": 1
+    }
+  },
+  "week_17": {
+    "fish": {
+      "medical": 1
+    }
+  },
+  "week_18": {
+    "fish": {
+      "commitment": 1
+    }
+  },
+  "week_19": {
+    "pleaser": {
+      "commitment": 1
+    },
+    "workaholic": {
+      "work": 1
+    }
+  },
+  "week_20": {
+    "slacker": {
+      "commitment": 1
+    }
+  },
+  "week_23": {
+    "fish": {
+      "work": 1
+    },
+    "pleaser": {
+      "work": 1
+    }
+  },
+  "week_24": {
+    "fish": {
+      "medical": 1
+    }
+  },
+  "week_26": {
+    "fish": {
+      "medical": 1
+    }
+  },
+  "week_28": {
+    "pleaser": {
+      "commitment": 1
+    },
+    "fish": {
+      "commitment": 1,
+      "medical": 1
+    }
+  },
+  "week_29": {
+    "pleaser": {
+      "commitment": 1
+    }
+  },
+  "week_30": {
+    "fish": {
+      "mystical": 1
+    },
+    "pigeon": {
+      "mystical": 1
+    },
+    "pleaser": {
+      "mystical": 1
+    },
+    "workaholic": {
+      "mystical": 1
+    }
+  },
+  "week_33": {
+    "pleaser": {
+      "commitment": 2
+    },
+    "fish": {
+      "commitment": 1
+    }
+  },
+  "week_36": {
+    "pigeon": {
+      "medical": 1
+    }
+  },
+  "week_37": {
+    "pleaser": {
+      "family": 1
+    }
+  },
+  "week_41": {
+    "fish": {
+      "mystical": 1
+    },
+    "pigeon": {
+      "mystical": 1,
+      "commitment": 1
+    }
+  },
+  "week_43": {
+    "pigeon": {
+      "medical": 1
+    }
+  },
+  "week_44": {
+    "fish": {
+      "mystical": 1
+    },
+    "pleaser": {
+      "mystical": 1
+    }
+  },
+  "week_46": {
+    "fish": {
+      "mystical": 1
+    }
+  },
+  "week_47": {
+    "pleaser": {
+      "mystical": 1
+    },
+    "slacker": {
+      "medical": 1
+    }
+  },
+  "week_48": {
+    "pleaser": {
+      "work": 1
+    }
+  },
+  "week_49": {
+    "slacker": {
+      "commitment": 1
+    }
+  },
+  "week_51": {
+    "pleaser": {
+      "medical": 1
+    }
+  }
+}

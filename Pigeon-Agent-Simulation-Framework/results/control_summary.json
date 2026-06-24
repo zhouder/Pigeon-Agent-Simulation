@@ -1,0 +1,32 @@
+{
+  "group_name": "【对照组】含记账狂 — 理性监督者存在",
+  "num_agents": 5,
+  "total_debt": 1371.55,
+  "bubble_index": 97.64,
+  "total_promises": 49,
+  "total_kept": 29,
+  "fulfillment_rate": 0.5918367346938775,
+  "risk_level": "深红",
+  "shocks_triggered": [
+    {
+      "week": 11,
+      "name": "双十一购物节"
+    },
+    {
+      "week": 23,
+      "name": "年终述职季"
+    },
+    {
+      "week": 30,
+      "name": "水星逆行"
+    },
+    {
+      "week": 37,
+      "name": "春节催婚潮"
+    },
+    {
+      "week": 45,
+      "name": "倒春寒流感大爆发"
+    }
+  ]
+}

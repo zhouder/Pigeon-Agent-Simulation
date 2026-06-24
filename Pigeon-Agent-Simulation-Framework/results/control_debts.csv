@@ -1,0 +1,50 @@
+creditor_id,debtor_id,reason,amount,week_created,last_updated,paid
+workaholic,pleaser,诶对了我突然想起来我要开会，下个月一定！,103.36,3,6,True
+bookkeeper,pigeon,下周一定，真的不是故意的！下次一定！,125.06,3,14,True
+slacker,pigeon,我发现我其实社恐，但不是普通的社恐，是量子叠加态社恐,134.14,4,4,True
+slacker,pleaser,我的塔罗牌说今天如果出门会有血光之灾(指钱包出血),147.58,4,9,True
+slacker,pleaser,诶对了我突然想起来我要开会，下下周一定！,149.91,5,5,True
+slacker,pleaser,诶对了我突然想起来我突然不舒服，下周一定！,44.16,6,6,True
+workaholic,pigeon,我发现我其实社恐，但不是普通的社恐，是量子叠加态社恐,182.98,8,12,True
+workaholic,pleaser,是这样的我有急事，下周一定！,127.45,8,8,True
+workaholic,pleaser,(全民剁手日到了。所有人因为付尾款而现金流断裂，同时快递太多导致'出门拿快递腿断了，不能赴约'。本周违约率强制飙升200%。) 而且我真的没办法！不是借口！,109.48,11,11,True
+bookkeeper,workaholic,临时加班，真的不是故意的！下次一定！,148.89,13,16,True
+bookkeeper,pleaser,下下周一定，真的不是故意的！下次一定！,54.2,14,15,True
+pigeon,workaholic,诶对了我突然想起来我突然不舒服，下下周一定！,127.36,17,17,True
+bookkeeper,pleaser,啊不好意思刚接到通知我要开会，下下周一定！,123.54,19,19,True
+pleaser,workaholic,诶对了我突然想起来我突然不舒服，下下周一定！,40.95,19,19,True
+bookkeeper,workaholic,诶对了我突然想起来我要出差，下下周一定！,156.35,20,23,True
+workaholic,pigeon,路上堵车，真的不是故意的！下次一定！,94.72,21,22,True
+workaholic,pigeon,我的塔罗牌说今天如果出门会有血光之灾(指钱包出血),572.37,22,52,False
+bookkeeper,pleaser,(KPI考核季，所有人都在疯狂写PPT。卷王连续加班100小时，阿讨好被领导约谈，小鸽谎称'出差'。借口的科技含量显著提升。) 而且我真的没办法！不是借口！,58.35,23,26,True
+slacker,pleaser,(KPI考核季，所有人都在疯狂写PPT。卷王连续加班100小时，阿讨好被领导约谈，小鸽谎称'出差'。借口的科技含量显著提升。) 而且我真的没办法！不是借口！,69.33,23,24,True
+pigeon,pleaser,是这样的我有急事，下下周一定！,36.4,24,24,True
+pleaser,workaholic,我室友的猫的闺蜜的狗要生了，我得去帮忙接生,140.78,25,25,True
+workaholic,bookkeeper,啊不好意思刚接到通知我有急事，下下周一定！,46.58,26,26,True
+pleaser,workaholic,我的量子物理课作业还没交，教授说了不交就挂科,36.42,28,29,True
+slacker,bookkeeper,啊不好意思刚接到通知我要开会，下个月一定！,65.48,29,29,True
+slacker,pigeon,是这样的我要出差，下个月一定！,165.87,29,35,True
+bookkeeper,slacker,猫生病了，真的不是故意的！下次一定！,62.47,29,29,True
+pigeon,workaholic,(天文异象！本周所有借口强制附加玄学理由。'我占卜说我今天不宜出门''我的星座运势说这周不适合社交'。借口荒谬度增加300%。) 而且我真的没办法！不是借口！,145.43,30,31,True
+slacker,pleaser,啊不好意思刚接到通知我有急事，下周一定！,94.47,32,37,True
+workaholic,pigeon,要陪爸妈，真的不是故意的！下次一定！,201.54,32,45,True
+workaholic,pleaser,下周一定，真的不是故意的！下次一定！,115.64,33,33,True
+bookkeeper,pleaser,下下周一定，真的不是故意的！下次一定！,123.64,33,33,True
+pigeon,pleaser,诶对了我突然想起来我有急事，下个月一定！,33.6,35,37,True
+pleaser,bookkeeper,啊不好意思刚接到通知我要开会，下周一定！,26.58,35,35,True
+workaholic,pleaser,我刚发现我的水瓶座水逆了今天不宜社交,101.16,36,36,True
+workaholic,pigeon,我发现我其实社恐，但不是普通的社恐，是量子叠加态社恐,276.3,38,52,False
+bookkeeper,pleaser,要陪爸妈，真的不是故意的！下次一定！,122.24,39,50,True
+slacker,pleaser,我的量子物理课作业还没交，教授说了不交就挂科,104.98,39,39,True
+slacker,pleaser,诶对了我突然想起来我要开会，下下周一定！,97.16,40,40,True
+slacker,workaholic,路上堵车，真的不是故意的！下次一定！,261.66,40,52,False
+slacker,pleaser,诶对了我突然想起来我要开会，下个月一定！,97.21,41,41,True
+bookkeeper,pleaser,诶对了我突然想起来我要开会，下个月一定！,83.77,41,42,True
+pleaser,workaholic,我发现我其实社恐，但不是普通的社恐，是量子叠加态社恐,215.29,42,49,True
+pleaser,pigeon,是这样的我突然不舒服，下周一定！,117.0,43,45,True
+bookkeeper,pleaser,诶对了我突然想起来我要出差，下周一定！,157.57,43,46,True
+pigeon,pleaser,是这样的我要出差，下周一定！,170.02,46,48,True
+bookkeeper,pleaser,我的第二自我今天需要独处时间来进行内在对话,68.69,47,47,True
+pigeon,workaholic,路上堵车，真的不是故意的！下次一定！,145.74,49,52,False
+pigeon,pleaser,我刚在短视频里看到今天不宜聚餐，会破财,93.23,50,50,True
+pigeon,pleaser,我刚在短视频里看到今天不宜聚餐，会破财,115.47,52,52,False

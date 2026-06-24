@@ -1,0 +1,47 @@
+# LaTeX compilation artifacts
+*.aux
+*.log
+*.out
+*.gz
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# OS junk
+__MACOSX/
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Environment
+.env
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Git
+*.orig
+
+# Temp
+*.old
+test.pdf
